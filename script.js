@@ -180,6 +180,9 @@ function startAgin() {
         questionIndex = 0;
         userScore=0;
         againBtn.style.display="none";
+        while (answersBody.firstChild) {
+            answersBody.removeChild(answersBody.firstChild);
+        }
         startQuiz();
     })
 }
