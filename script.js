@@ -112,6 +112,7 @@ let questionList = [
 let questions = document.getElementById('quizQuestion');
 let answersBody = document.querySelector(".quizBoxBody");
 let nextBtn = document.getElementById('quizNext');
+let againBtn = document.getElementById('quizNext2');
 
 let questionIndex = 0;
 let userScore = 0;
@@ -121,6 +122,7 @@ function startQuiz() {
 
     let qu = questionList[questionIndex].question;
     let an = questionList[questionIndex].answer;
+    questions.innerText="";
     questions.innerText = (questionIndex + 1) + "." + qu;
 
     an.forEach(element => {
@@ -167,16 +169,17 @@ nextBtn.addEventListener('click', function () {
     }
     if (questionIndex == questionList.length) {
         questions.innerHTML = `Your Score is : \t ${userScore}\t Out of : \t${questionList.length}`;
-        nextBtn.style.display = "inline-block";
+        againBtn.style.display = "inline-block";
         startAgin();
     }
     startQuiz();
 })
 
 function startAgin() {
-    nextBtn.innerHTML = "Start Again";
-    nextBtn.addEventListener('click', function () {
+    againBtn.addEventListener('click', function () {
         questionIndex = 0;
+        userScore=0;
+        againBtn.style.display="none";
         startQuiz();
     })
 }
