@@ -61,6 +61,17 @@ body {
   letter-spacing: 2px;
   display: none;
 }
+#quizNext2 {
+  background-color: rgb(0, 115, 255);
+  color: white;
+  padding: 7px;
+  font-size: 12px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin: 30px;
+  letter-spacing: 2px;
+  display: none;
+}
 
 .quizButton{
     cursor: pointer;
